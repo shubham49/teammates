@@ -12,7 +12,7 @@
             Student peer evaluations/feedback, shareable instructor comments, and more...
         </h1>
         <div class="row">
-            <img class="center-block img-responsive" alt="Overview of TEAMMATES - anonymous peer feedback and confidential peer evaluations" src="images/overview.png">
+            <img class="center-block img-responsive" alt="Overview of TEAMMATES - anonymous peer feedback and confidential peer evaluations" src="images/teammateslogo-black.png">
         </div>
         <h2 class="color_orange row h4 text-center color_blue">
             <span id= "submissionsNumber" class="color_orange">5,000,000+</span> feedback entries submitted so far ...
