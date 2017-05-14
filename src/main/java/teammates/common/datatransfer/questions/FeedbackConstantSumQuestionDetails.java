@@ -417,6 +417,7 @@ public class FeedbackConstantSumQuestionDetails extends FeedbackQuestionDetails 
 
             List<Integer> points = entry.getValue();
             double average = computeAverage(points);
+            double total = computeTotal(points);
             String pointsReceived = getListOfPointsAsString(points);
 
             if (distributeToRecipients) {
@@ -428,7 +429,8 @@ public class FeedbackConstantSumQuestionDetails extends FeedbackQuestionDetails 
                         Slots.CONSTSUM_OPTION_VALUE, SanitizationHelper.sanitizeForHtml(name),
                         Slots.TEAM, SanitizationHelper.sanitizeForHtml(teamName),
                         Slots.CONSTSUM_POINTS_RECEIVED, pointsReceived,
-                        Slots.CONSTSUM_AVERAGE_POINTS, df.format(average)));
+                        Slots.CONSTSUM_AVERAGE_POINTS, df.format(average),
+                        Slots.CONSTSUM_TOTAL_POINTS, df.format(total)));
             } else {
                 String option = entry.getKey();
 
@@ -608,6 +610,14 @@ public class FeedbackConstantSumQuestionDetails extends FeedbackQuestionDetails 
         }
         average = average / points.size();
         return average;
+    }
+    
+    private double computeTotal(List<Integer> points) {
+        double total = 0;
+        for (Integer point : points) {
+            total += point;
+        }
+        return total;
     }
 
     @Override
